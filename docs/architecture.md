@@ -85,9 +85,9 @@ Error handling should be improved. For example, there is no check that
 ## Tests
 
 There are currently no automatic tests for `FoodController` and
-`Foodservice`.
+`FoodService`.
 
 ## Mesage on STDOUT during operations
 
-Whenever a individual food item is requested, the application prints
-`Servings not found` to `STDOUT`.
+When an individual food item with only a single `Serving` is requested,
+the application prints `Servings not found` to `STDOUT`.
