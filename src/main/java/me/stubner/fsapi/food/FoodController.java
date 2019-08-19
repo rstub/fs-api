@@ -22,10 +22,10 @@ import com.fatsecret.platform.model.Food;
 @RestController
 public class FoodController {
 
-	private final FoodService service;
+	private final FoodServiceInterface service;
 
 	@Autowired
-	FoodController(FoodService service) {
+	FoodController(FoodServiceInterface service) {
 		this.service = service;
     }
 	

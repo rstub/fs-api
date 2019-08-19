@@ -17,15 +17,17 @@ import com.fatsecret.platform.services.FatsecretService;
  *
  */
 @Service
-public class FoodService {
+public class FoodService implements FoodServiceInterface {
 
 	@Autowired
 	private FatsecretService service;
 
+	@Override
 	public List<CompactFood> search(String query) {
 		return service.searchFoods(query).getResults();
 	}
 
+	@Override
 	public Food getOne(Long id) {
 		return service.getFood(id);
 	}
