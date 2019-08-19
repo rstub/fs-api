@@ -45,6 +45,13 @@ REST API:
 * `/api/v1/food/?q=<queryString>` for searching
 * `/api/v1/food/<foodId>` for getting a specific food item
 
+# Crosscutting Concerns
+
+## Loose Coupling
+
+Components should be loosly coupled using the dependency injection
+facilities offered by the Spring (Boot) framework.
+
 # Architectural Decisions
 
 ## REST or RESTful?
@@ -59,3 +66,28 @@ therefore left for future enhancement when needed.
 I prefer packaging by component, i.e. `FoodController` and `FoodService`
 go into one package `food` instead of two packages `controller(s)` and
 `service(s)`. In a future version a `recipe` component could be added.
+
+
+## Domain model
+
+In principle one could develop a separate domain model for the service.
+Given the current requirements the domain model provided by the
+`CompactFood` and `Food` classes from `fatsecret4j` is sufficient.
+
+# Risks and Technical dept
+
+## Error handling
+
+Error handling should be improved. For example, there is no check that
+`FsApiApplication.initFatsecretService()` returns a valid
+`FatsecretService` object.
+
+## Tests
+
+There are currently no automatic tests for `FoodController` and
+`Foodservice`.
+
+## Mesage on STDOUT during operations
+
+Whenever a individual food item is requested, the application prints
+`Servings not found` to `STDOUT`.
