@@ -23,6 +23,14 @@ directory as
 $ mvnw spring-boot:run
 ```
 
+Alternativly you can split the tasks of building the (fat) JAR file from
+executing it:
+
+```bash
+$ mvnw package
+$ java -jar target/fs-api-0.0.1-SNAPSHOT.jar
+```
+
 For tests it is helpful to have a JSON pretty printer like `jq`
 available:
 
