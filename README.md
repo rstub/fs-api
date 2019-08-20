@@ -102,3 +102,22 @@ $ curl --silent http://localhost:8080/api/v1/food/35752 | jq
   ]
 }
 ```
+## Deployment
+
+The API can be packaged as a Docker image with
+
+```bash
+$ mvnw install dockerfile:build
+```
+
+The resulting image can be run with
+
+```bash
+$ docker run -d --rm -p 8080:8080 \
+    -e FATSECRET_CLIENT_ID -e FATSECRET_CLIENT_SECRET \
+    rstub/fs-api
+```
+
+If the docker container is run some other way (`docker-compose`,
+kubernetes, ...) the port-forwarding and environment variables have to
+be defined in the run-time configuration.

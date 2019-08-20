@@ -45,6 +45,16 @@ REST API:
 * `/api/v1/food/?q=<queryString>` for searching
 * `/api/v1/food/<foodId>` for getting a specific food item
 
+# Deployment View
+
+For deployment `fs-api` can be packaged as a docker container. The
+docker container requires the following run-time configuration:
+
+* port forwarding for port 8080
+* environment variables `FATSECRET_CONSUMER_KEY` and
+  `FATSECRET_CONSUMER_SECRET` containing the OAuth 1 credentials for the
+  FatSecret service.
+
 # Crosscutting Concerns
 
 ## Loose Coupling
