@@ -87,7 +87,10 @@ Error handling should be improved. For example, there is no check that
 There are currently no automatic tests for `FoodController` and
 `FoodService`.
 
-## Mesage on STDOUT during operations
+## ~~Mesage on STDOUT during operations~~
 
 When an individual food item with only a single `Serving` is requested,
-the application prints `Servings not found` to `STDOUT`.
+the application prints `Servings not found` to `STDOUT`. In specting the
+[fatsecret4j's source
+code](https://github.com/fatsecret/fatsecret4j/blob/0cdeb5eb0af29f8dd0dfa0c6d90c4caf12731fb3/src/main/java/com/fatsecret/platform/utils/FoodUtility.java#L59-L65)
+these messages are unavoidable and harmless.
