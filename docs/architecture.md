@@ -35,7 +35,7 @@ The `fs-api` provides a REST API for the
 +----------------+  GET food   +-------------+  GET food   +------------------+
 ```
 
-* The extrnal interfaces are provided by the `FoodController` class.
+* The external interfaces are provided by the `FoodController` class.
 * The `FoodController` forwards the external requests to the
   `FoodService` class.
 * The `Foodservice` makes use of the `FatsecretService` provided by
@@ -59,14 +59,14 @@ docker container requires the following run-time configuration:
 
 ## Loose Coupling
 
-Components should be loosly coupled using the dependency injection
+Components should be loosely coupled using the dependency injection
 facilities offered by the Spring (Boot) framework.
 
 # Architectural Decisions
 
 ## REST or RESTful?
 
-To produce a truely RESTful API, one could start adding links using
+To produce a truly RESTful API, one could start adding links using
 Sprint HATEOS. This is currently not needed for any requirement and
 therefore left for future enhancement when needed.
 
@@ -100,7 +100,7 @@ There are currently no automatic tests for `FoodController` and
 ## ~~Mesage on STDOUT during operations~~
 
 When an individual food item with only a single `Serving` is requested,
-the application prints `Servings not found` to `STDOUT`. In specting the
+the application prints `Servings not found` to `STDOUT`. Inspecting the
 [fatsecret4j's source
 code](https://github.com/fatsecret/fatsecret4j/blob/0cdeb5eb0af29f8dd0dfa0c6d90c4caf12731fb3/src/main/java/com/fatsecret/platform/utils/FoodUtility.java#L59-L65)
 these messages are unavoidable and harmless.
